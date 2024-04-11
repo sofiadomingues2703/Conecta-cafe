@@ -18,9 +18,9 @@
 
                 </div>
             </div>
-            <div class="card-body px-0 pb-2">
+            <div class="card-body pb-2">
                 <div class="table-responsive p-0">
-                    <table class="table align-items-center justify-content-center mb-0 w-100">
+                    <table  id="dataTable" class="table align-items-center justify-content-center mb-0 w-100">
                         <thead>
 
                             <tr>
@@ -62,3 +62,22 @@
         </div>
     </div>
 </div>
+
+@section Scripts{
+<script>
+
+    let dataTable = new DataTable('#dataTable', {
+        language: {
+            url: '../../lib/datatables/pt-BR.json'
+        },
+        initComplete: function(setting, json){
+            document.querySelector('.dt-length').classList.add('text-xs');
+            document.querySelector('.dt-search').classList.add('text-xs');
+            document.querySelector('.dt-info').classList.add('text-xs');
+            document.querySelector('.dt-paging').classList.add('text-xs');
+        }
+    });
+
+</script>
+}
+
